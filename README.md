@@ -4,8 +4,8 @@ This repository contains my projects, codes, and assignments from my ongoing stu
 
 ## Repository Structure
 - **Sem2/**:Introduction to programming (C programming).
-- **Sem3/**:Data Structures, Object-Oriented Programming,Mathematical Foundation for AIML
-- **Sem4/**:Modern Algorithms and Design Foundation, Assemby, Introduction to AIML(To be updated)
+- **Sem3/**:Data Structures, Object-Oriented Programming.
+- **Sem4/**:Modern Algorithms and Design Foundation, Assemby,Mathematical Foundation for AIML.
 - **Sem5/**: (Work to be updated as semester progresses)
 - **Sem6-8/**:(Work to be added in future Semesters)
 
