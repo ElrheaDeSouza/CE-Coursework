@@ -17,7 +17,7 @@ I have currently completed up to Semester 4. This repository will be continuousl
 
 - Programming Languages: C, C++, Java, Python
 - Web Development: HTML, CSS, JavaScript
-- Tools: Git, VS Code, MySQL
+- Tools: Git, VS Code, MySQL, Oracle
 
 ## How to Use
 
