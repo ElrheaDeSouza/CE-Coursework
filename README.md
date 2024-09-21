@@ -5,7 +5,7 @@ This repository contains my projects, codes, and assignments from my ongoing stu
 ## Repository Structure
 - **Sem2/**:Introduction to programming (C programming).
 - **Sem3/**:Data Structures, Object-Oriented Programming.
-- **Sem4/**:Modern Algorithms and Design Foundation, Assemby,Mathematical Foundation for AIML.
+- **Sem4/**:Modern Algorithms and Design Foundation, Assembly (NASM), Mathematical Foundation for AIML.
 - **Sem5/**: (Work to be updated as semester progresses)
 - **Sem6-8/**:(Work to be added in future Semesters)
 
@@ -17,7 +17,7 @@ I have currently completed up to Semester 4. This repository will be continuousl
 
 - Programming Languages: C, C++, Java, Python
 - Web Development: HTML, CSS, JavaScript
-- Tools: Git, VS Code, MySQL, Oracle
+- Tools: Git, VS Code, MySQL, Oracle, NASM
 
 ## How to Use
 
