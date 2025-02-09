@@ -1,0 +1,102 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Styling for the text to center-align and keep margins */
+        .event-text {
+            display: block;
+            text-align: left;
+            margin: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <span class="event-text" id="mousedownBox">Click me (mousedown)!</span>
+    <span class="event-text" id="mouseupBox">Release me (mouseup)!</span>
+    <span class="event-text" id="mouseoverBox">Hover over me (mouseover)!</span>
+    <span class="event-text" id="mouseoutBox">Mouse out of me (mouseout)!</span>
+    <span class="event-text" id="mousemoveBox">Move over me (mousemove)!</span>
+
+    <script>
+        const texts = document.querySelectorAll(".event-text");
+
+        // Mouse Down
+        texts[0].addEventListener("mousedown", function() {
+            prompt("Mouse button pressed!");
+        });
+
+        // Mouse Up
+        texts[1].addEventListener("mouseup", function() {
+            prompt("Mouse button released!");
+        });
+
+        // Mouse Over
+        texts[2].addEventListener("mouseover", function() {
+            prompt("Mouse over the element!");
+        });
+
+        // Mouse Out
+        texts[3].addEventListener("mouseout", function() {
+            prompt("Mouse out of the element!");
+        });
+
+        // Mouse Move
+        texts[4].addEventListener("mousemove", function(event) {
+            prompt("Mouse moved over element");
+        });
+    </script>
+</body>
+</html> 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Styling for the text to center-align and keep margins */
+        .event-text {
+            display: block;
+            text-align: left;
+            margin: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+
+     <script>
+        const texts = document.querySelectorAll(".event-text");
+
+        function handleonmousedown()
+        {
+            alert("Mouse button was pressed!");
+        }
+        function handleonmouseup()
+        {
+            alert("Mouse button was released!");
+        }
+        function handleonmouseover()
+        {
+            alert("You just hovered over the text!");
+        }
+        function handleonmouseout()
+        {
+            alert("You just hovered out of text!");
+        }
+        function handleonmousemove()
+        {
+            alert("On mouse move event was triggered!");
+        }
+    </script>
+    <span class="event-text" id="mousedownBox" onmousedown="handleonmousedown()" >Click me (mousedown)!</span>
+    <span class="event-text" id="mouseupBox" onmousedown="handleonmouseup()">Release me (mouseup)!</span>
+    <span class="event-text" id="mouseoverBox" onmouseover="handleonmouseover()">Hover over me (mouseover)!</span>
+    <span class="event-text" id="mouseoutBox" onmouseout="handleonmouseout()">Mouse out of me (mouseout)!</span>
+    <span class="event-text" id="mousemoveBox" onmousemove="handleonmousemove()">Move over me (mousemove)!</span>
+</body>
+</html> 

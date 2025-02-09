@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Events</title>
+    <script>
+        function handleClick() {
+            alert("Button clicked");
+        }
+
+        function handleDoubleClick() {
+            alert("Button double clicked");
+        }
+
+        function handleSubmit(event) {
+            alert("Form Submitted successfully");
+            event.preventDefault();  // Prevent actual form submission to keep the page from refreshing
+        }
+
+        function handleReset() {
+            alert("Form is reset");
+        }
+
+        function loadPage() {
+            alert("Page loaded");
+        }
+
+        function handleChange(event) {
+            let selectedState = event.target.value;
+            alert("State Selected is: " + selectedState);
+        }
+    </script>
+</head>
+<body onload="loadPage()">
+    <h2>JavaScript Events</h2>
+
+    <!--onclick-->
+    <button onclick="handleClick()">Click here</button><br><br>
+    
+    <!--ondblclick-->
+    <button ondblclick="handleDoubleClick()">Double-click-me</button><br><br>
+
+    <!--onsubmit and onreset events-->
+    <form onsubmit="handleSubmit(event)" onreset="handleReset()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <br><br>
+
+    <!--onchange event-->
+    <label for="dropdown">Choose a state:</label>
+    <select id="dropdown" onchange="handleChange(event)">
+        <option value="Bombay">Bombay</option>
+        <option value="Goa">Goa</option>
+        <option value="Kerala">Kerala</option>
+    </select>
+
+    <div id="result"></div>
+</body>
+</html>

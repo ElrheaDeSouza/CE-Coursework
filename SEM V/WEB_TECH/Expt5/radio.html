@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function f1() {
+            // Get all radio buttons with name 'branch'
+            var radios = document.getElementsByName('branch');
+            var selectedValue = "";
+
+            // Loop through the radio buttons to find the checked one
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedValue = radios[i].value;
+                    break;
+                }
+            }
+
+            if (selectedValue === "") {
+                alert("Branch not selected");
+                return false;
+            } else {
+                alert("Branch selected is " + selectedValue);
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return f1()">
+        <label>Select your branch:</label><br>
+        <input type="radio" id="Co" name="branch" value="Computer">Computer<br>
+        <input type="radio" id="ECE" name="branch" value="Electrical">Electrical<br>
+        <input type="radio" id="MECH" name="branch" value="Mechanical">Mechanical<br>
+        <input type="submit">
+    </form>
+</body>
+</html>

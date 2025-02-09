@@ -1,0 +1,37 @@
+<!--getElementById()-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Validate radio buttons</title>
+    <script>
+        function f1() {
+            var a = document.getElementById("Co");
+            var b = document.getElementById("ECE");
+            var c = document.getElementById("MECH");
+            if ((a.checked == false) && (b.checked == false) && (c.checked == false)) {
+                alert("Please select a value!");
+            }
+            else if (a.checked == true) {
+                alert("You selected:" + a.value);
+            }
+            else if (b.checked == true) {
+                alert("You selected:" + b.value);
+            }
+            else if (c.checked == true) {
+                alert("You selected:" + c.value);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return f1()">
+        <label>Select your branch:</label><br>
+        <input type="radio" id="Co" name="branch" value="Computer">Computer<br>
+        <input type="radio" id="ECE" name="branch" value="Electrical">Electrical<br>
+        <input type="radio" id="MECH" name="branch" value="Mechanical">Mechanical<br>
+        <input type="submit">
+    </form>
+</body>
+</html>

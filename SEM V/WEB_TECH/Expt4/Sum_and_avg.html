@@ -1,0 +1,35 @@
+<!--Js to find the sum and average of entered numbers-->
+<!DOCTYPE html>
+<html >
+<head>
+   
+    <title>Document</title>
+    <script>
+        var a=[];
+        var i,sum=0,avg;
+     var n=parseInt(prompt("Enter total number: "));
+     for(i=0;i<n;i++)
+     {
+        a[i]=parseInt(prompt("Enter next element:"));
+     }
+     document.write("Entered elements are: ");
+     for(i=0;i<n;i++)
+     {
+        document.write("<br>"+a[i]);
+     }
+
+     for(i=0;i<n;i++)
+     {
+        sum=sum+a[i];
+     }
+     avg=sum/n;
+     document.write("<br> Sum is: "+sum);
+     document.write("<br> Average is: "+avg)
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

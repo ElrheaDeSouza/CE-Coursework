@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function calculator()
+        {
+            var num1=parseFloat(prompt("Enter first number: "));
+            var num2=parseFloat(prompt("Enter second number: "));
+            var c=parseInt(prompt("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus"));
+            document.write("<br>Enter your choice: " + c + "<br>");
+
+            function add()
+            {
+                var add=num1 + num2;
+                document.write("Addition of " + num1 + " and " + num2 + " = " + add + "<br>");
+            }
+            function diff()
+            {
+                var diff=num1 - num2;
+                document.write("Subtraction of " + num1 + " and " + num2 + " = " + diff + "<br>");
+            }
+            function product()
+            {
+                var prdct=num1 * num2;
+                document.write("Multiplication of " + num1 + " and " + num2 + " = " + prdct + "<br>");
+            }
+            function quotient()
+            {
+                if(num2 != 0)
+                {
+                    var qtnt=num1 / num2;
+                    document.write("Division of " + num1 + " and " + num2 + " = " + qtnt + "<br>");
+                }
+                else
+                {
+                    document.write("Error: Division by zero is not allowed.<br>");
+                }
+            }
+            function remainder()
+            {
+                if(num2 != 0)
+                {
+                    var mod=num1 % num2;
+                    document.write("Modulus of " + num1 + " and " + num2 + " = " + mod + "<br>");
+                }
+                else
+                {
+                    document.write("Error: Modulus by zero is not allowed.<br>");
+                }
+            }
+            
+            switch(c)
+            {
+                case 1: add();
+                        break;
+                case 2: diff();
+                        break;
+                case 3: product();
+                        break;
+                case 4: quotient();
+                        break;
+                case 5: remainder();
+                        break;
+                default: document.write("Invalid choice...!<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calculator()">Calculate</button>
+</body>
+</html>

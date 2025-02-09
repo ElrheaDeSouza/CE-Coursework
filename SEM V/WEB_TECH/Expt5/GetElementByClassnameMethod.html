@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function myFunction() {
+            var a = document.getElementsByClassName("c1");
+            for (var i = 0; i < a.length; i++) {
+                a[i].style.fontSize = "25px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p id="p1" class="c1">AICTE</p>
+    <p id="p2" class="c2">Engineering</p>
+    <p id="p3" class="c1">MBBS</p>
+    <p id="p4" class="c2">Pharmacy</p>
+    <a href="#" class="c1"> This is a link</a><br>
+    <button type="button" onclick='myFunction()'>Click Here</button>
+</body>
+</html>

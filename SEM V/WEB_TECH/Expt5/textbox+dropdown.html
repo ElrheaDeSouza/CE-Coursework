@@ -1,0 +1,119 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <script>
+            function f1() 
+            {
+                var fname = document.getElementById("fn").value;
+                var lname = document.getElementById("ln").value;
+
+                if(fname == "")
+                {
+                    alert("First name field can't be empty");
+                    return false;
+                }
+
+                if(lname == "")
+                {
+                    alert("Last name field can't be empty");
+                    return false;
+                }
+
+                document.write("<br>First name entered is: " + fname);
+                document.write("<br>Last name entered is: " + lname);
+
+                var x = document.getElementById("ad");
+                var y = x.options[x.selectedIndex].value;
+
+                if(y == "")
+                {
+                    alert("State not selected ");
+                    return false;
+                }
+                else
+                {
+                    alert("State selected is: " +y);
+                    return true;
+                }            
+            }
+        </script>
+        <form onsubmit="return f1()" >
+            <label>First Name</label>
+            <input type="text" id="fn"><br><br>
+            <label>Last Name</label>
+            <input type="text" id="ln"><br>
+            <br>
+            <label>Select your state</label>
+            <select id="ad">
+                <option value=""></option>
+                <option value="Goa">Goa</option>
+                <option value="Bombay">Bombay</option>
+                <option value="Kerala">Kerala</option>
+            </select>
+            <br>
+            <input type="submit"></input>
+            
+        </form>
+        
+    </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <script>
+            function f1() 
+            {
+                var fname = document.getElementById("fn").value;
+                var lname = document.getElementById("ln").value;
+
+                if(fname == "")
+                {
+                    alert("First name field can't be empty");
+                    return false;
+                }
+
+                if(lname == "")
+                {
+                    alert("Last name field can't be empty");
+                    return false;
+                }
+
+                alert("First name entered is: " + fname);
+                alert("Last name entered is: " + lname);
+
+                var x = document.getElementById("ad");
+                var y = x.options[x.selectedIndex].value;
+
+                if(y == "")
+                {
+                    alert("State not selected ");
+                    return false;
+                }
+                else
+                {
+                    alert("State selected is: " +y);
+                    return true;
+                }            
+            }
+        </script>
+        <form onsubmit="return f1()" >
+            <label>First Name</label>
+            <input type="text" id="fn"><br><br>
+            <label>Last Name</label>
+            <input type="text" id="ln"><br>
+            <br>
+            <label>Select your state</label>
+            <select id="ad">
+                <option value=""></option>
+                <option value="Goa">Goa</option>
+                <option value="Bombay">Bombay</option>
+                <option value="Kerala">Kerala</option>
+            </select>
+            <br>
+            <input type="submit"></input>
+            
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript program</title>
+    <script>
+        function myFunction() {
+            var a = document.getElementsByTagName("p");
+            for (var i = 0; i < a.length; i++) {
+                a[i].style.fontSize = "30px";
+                a[i].style.backgroundColor = "orange";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>AICTE</h1>
+    <h2>Approved Subjects</h2>
+    <p id="p1">Web Technologies</p>
+    <p id="p2">OOPS</p>
+    <p id="p3">Operating Systems</p>
+    <button type="button" onclick='myFunction()'>Click Here</button>
+</body>
+</html>

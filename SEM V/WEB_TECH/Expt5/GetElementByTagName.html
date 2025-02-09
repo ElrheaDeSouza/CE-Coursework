@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function myFunction() {
+            var a = document.getElementsByTagName("p");
+            alert(a[0].innerHTML);
+            alert(a[1].innerHTML);
+            alert(a[2].innerHTML);
+            alert(a[3].innerHTML);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>The subjects are:</h2>
+    <p id="p1">Mathematics</p>
+    <p id="p2">Physics</p>
+    <p id="p3">Computer Science</p>
+    <p id="p4">Chemistry</p>
+    <button type="button" onclick='myFunction()'>Click Here</button>
+</body>
+</html>

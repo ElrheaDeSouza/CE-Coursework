@@ -1,0 +1,87 @@
+<!--4.Validation of Check boxes
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        function f1() {
+            var x = document.getElementsByName("lang");//array because it points to check boxes
+            var languages = "";
+            for (var i = 0; i < x.length; i++) {
+                if (languages == "") {
+                    alert("No values selected");
+                    return false;
+                }
+                else {
+                    alert("values selected are " + languages);
+                    return true;
+                }
+            }
+
+
+
+    }
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <form onsubmit="return f1()">
+        <label>Select your subjects</label><br>
+        <input type="checkbox" value="English" name="lang">Eng<br><br>
+        <input type="checkbox" value="Konkani" name="lang">Kon<br><br>
+        <input type="checkbox" value="Hindi" name="lang">Hindi<br><br>
+        <input type="checkbox" value="Greek" name="lang">Greek<br><br>
+        <input type="submit">
+    </form>
+</body>
+
+</html> -->
+
+<!--4.Validation of Check boxes-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        function f1() {
+            var x = document.getElementsByName("lang"); // array pointing to checkboxes
+            var languages = ""; // Initialize an empty string
+
+            for (var i = 0; i < x.length; i++) {
+                // Check if the checkbox is checked
+                if (x[i].checked) {
+                    // Append the value of the checked box to the languages variable
+                    languages += x[i].value + " ";
+                }
+            }
+            if (languages == "") {
+                alert("No values selected");
+                return false;
+            } else {
+                alert("Values selected are " + languages);
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return f1()">
+        <label>Select your subjects</label><br>
+        <input type="checkbox" value="English" name="lang">Eng<br>
+        <input type="checkbox" value="Konkani" name="lang">Kon<br>
+        <input type="checkbox" value="Hindi" name="lang">Hindi<br>
+        <input type="checkbox" value="Greek" name="lang">Greek<br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .event-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="event-box" id="mousedownBox">Click me (mousedown)!</div>
+    <div class="event-box" id="mouseupBox">Release me (mouseup)!</div>
+    <div class="event-box" id="mouseoverBox">Hover over me (mouseover)!</div>
+    <div class="event-box" id="mouseoutBox">Mouse out of me (mouseout)!</div>
+    <div class="event-box" id="mousemoveBox">Move over me (mousemove)!</div>
+
+    <script>
+        const boxes = document.querySelectorAll(".event-box");
+
+        // Mouse Down
+        boxes[0].addEventListener("mousedown", function() {
+            prompt("Mouse button pressed!");
+        });
+
+        // Mouse Up
+        boxes[1].addEventListener("mouseup", function() {
+            prompt("Mouse button released!");
+        });
+
+        // Mouse Over
+        boxes[2].addEventListener("mouseover", function() {
+            prompt("Mouse over the element!");
+        });
+
+        // Mouse Out
+        boxes[3].addEventListener("mouseout", function() {
+            prompt("Mouse out of the element!");
+        });
+
+        // Mouse Move
+        boxes[4].addEventListener("mousemove", function(event) {
+            prompt("Mouse moved over element");
+        });
+    </script>
+</body>
+</html>

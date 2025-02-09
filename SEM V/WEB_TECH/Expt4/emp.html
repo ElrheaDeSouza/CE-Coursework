@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Details</title>
+</head>
+<body>
+    <h2>Salary Information</h2>
+
+    <script>
+        var names = [];  
+        var salary = [];
+        var lowestSalary;
+        var highestSalary; 
+        var hsName;
+        var lsName;
+
+        for (var i = 0; i < 5; i++) {
+            names[i] = prompt("Enter the name: ");
+            salary[i] = parseInt(prompt("Enter the salary: "));
+        }
+
+        document.write("Entered data is:");
+        for (var i = 0; i < 5; i++) {
+            document.write("<br> Name: " + names[i]);
+            document.write("<br> Salary: " + salary[i] + "<br>");
+        }
+
+        highestSalary = salary[0];
+        lowestSalary = salary[0];
+        hsName = names[0];
+        lsName = names[0];
+
+        for (var i = 1; i < 5; i++) {
+            if (salary[i] > highestSalary) {
+                highestSalary = salary[i];
+                hsName = names[i];
+            }
+
+            if (salary[i] < lowestSalary) {
+                lowestSalary = salary[i];
+                lsName = names[i];
+            }
+        }
+
+        document.write("<br>The person with the highest salary is " + hsName + " and their salary is " + highestSalary + ".");
+        document.write("<br>The person with the lowest salary is " + lsName + " and their salary is " + lowestSalary + ".");
+    </script>
+</body>
+</html>

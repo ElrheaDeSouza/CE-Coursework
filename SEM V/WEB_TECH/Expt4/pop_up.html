@@ -1,0 +1,29 @@
+<!--3 Types of pop up Boxes-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Popup Boxes</title>
+</head>
+<body>
+    <script>
+        // Alert Box
+        alert("This is an alert box!");
+
+        // Confirm Box
+        var result = confirm("Do you want to proceed?");
+        if (result) {
+            document.write("You clicked OK!");
+        } else {
+            document.write("You clicked Cancel!");
+        }
+
+        // Prompt Box
+        var name = prompt("Enter your name:", "");
+        if (name != null) {
+            document.write("Hello, " + name + "!");
+        } else {
+            document.write("You clicked Cancel!");
+        }
+    </script>
+</body>
+</html>

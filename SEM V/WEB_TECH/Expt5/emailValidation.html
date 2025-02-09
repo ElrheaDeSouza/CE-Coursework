@@ -1,0 +1,29 @@
+<!--5.Phone Number validation-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+            var pn=document.getElementById("ea").value;
+            var x=/^([a-z A-Z 0-9\.-]+)@([a-z A-Z 0-9 _]+)\.([a-z]+)(\.[a-z]+)?$/;
+            if(x.test(pn)==false)
+        {
+            alert("Invalid");
+        }
+        else{
+            alert("valid");
+            document.write("Email Address is:"+pn)
+        }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <label>Enter your email address:</label><br>
+        <input type="textbox" id="ea"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

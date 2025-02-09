@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Signup Form Validation</title>
+    <script>
+        function validate() {
+            var firstname = document.getElementById("fn").value;
+            var lastname = document.getElementById("ln").value;
+            var birth_date = document.getElementById("dob").value;
+            var branch_selected = "";
+            var x = document.getElementsByName("branch");
+            for (var i = 0; i < x.length; i++) {
+                if (x[i].checked) {
+                    branch_selected = x[i].value;
+                    break;
+                }
+            }
+            var a = document.getElementById("states");
+            var state_selected = a.options[a.selectedIndex].value;
+            var languages = document.getElementsByName("lang");
+            var lan = "";
+            for (var i = 0; i < languages.length; i++) {
+                if (languages[i].checked) {
+                    lan += languages[i].value + " ";
+                }
+
+            }
+            if (firstname === "") {
+                alert("Please enter First name");
+                return false;
+            }
+            else if (lastname === "") {
+                alert("Please enter Last name");
+                return false;
+            }
+            else if (birth_date === "") {
+                alert("Please select birth date");
+                return false;
+            }
+            else if (branch_selected === "") {
+                alert("Please select branch");
+                return false;
+            }
+            else if (state_selected === "") {
+                alert("Please select state");
+                return false;
+            }
+            else if (lan === "") {
+                alert("Please select languages");
+                return false;
+            }
+            else {
+                alert("Form validated successfully\n" +
+                    "First name: " + firstname + "\n" +
+                    "Last name: " + lastname + "\n" +
+                    "Date of Birth: " + birth_date + "\n" +
+                    "Branch: " + branch_selected + "\n" +
+                    "State: " + state_selected + "\n" +
+                    "Languages: " + lan);
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validate()">
+        <label>Enter First Name</label>
+        <input type="text" id="fn" autocomplete="off"><br><br>
+        <label>Enter Last Name</label>
+        <input type="text" id="ln" autocomplete="off"><br><br>
+        <label>Enter Date of Birth</label>
+        <input type="date" id="dob"><br><br>
+        <label>Select your branch</label>
+        <input type="radio" id="r1" name="branch" value="Computer">Comp
+        <input type="radio" id="r2" name="branch" value="Mechanical">Mech
+        <input type="radio" id="r3" name="branch" value="Electronics">ECE
+        <br><br>
+        <label>Select state</label>
+        <select id="states">
+            <option value=""></option>
+            <option value="Goa">Goa</option>
+            <option value="Bombay">Bombay</option>
+            <option value="Kerala">Kerala</option>
+        </select>
+        <br><br>
+        <label>Select the languages </label><br>
+        <input type="checkbox" id="eng" name="lang" value="English">English<br>
+        <input type="checkbox" id="hin" name="lang" value="Hindi">Hindi<br>
+        <input type="checkbox" id="kon" name="lang" value="Konkani">Konkani<br>
+        <input type="checkbox" id="grk" name="lang" value="Greek">Greek<br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+
+</html>
