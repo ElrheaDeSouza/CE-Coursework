@@ -1,3 +1,4 @@
+#Best First Search
 graph = {
     'A': [('B', 7), ('C', 4)],
     'B': [('D', 7), ('E', 3)],
