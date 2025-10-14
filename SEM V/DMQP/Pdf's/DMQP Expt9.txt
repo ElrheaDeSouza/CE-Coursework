@@ -1,0 +1,70 @@
+ create table Sale_22co11
+  (oid number(2), oname varchar(5),previous_balance number(6),customer varchar(10));
+
+
+ insert into Sale_22co11
+ values(11,'ord1',2000,'Alex');
+
+
+ insert into Sale_22co11
+ values(12,'ord2',1000,'Adam');
+
+
+ insert into Sale_22co11
+ values(13,'ord3',2000,'Abhi');
+
+
+ insert into Sale_22co11
+  values(14,'ord4',1000,'Adam');
+
+
+ insert into Sale_22co11
+ values(15,'ord5',2000,'Alex');
+
+//1 
+create VIEW Sale_22co11_1 as
+  select * from Sale_22co11;
+
+//2
+select * from Sale_22co11_1;
+
+//3
+ create view Sale_22co11_2 as select OID,ONAME,CUSTOMER from Sale_22co11;
+
+//4
+ select * from Sale_22co11_2;
+
+//5
+ create view Sale_22co11_3 AS select OID,PREVIOUS_BALANCE AS PREV_BAL from sale_22co11;
+
+//6
+ select * from Sale_22co11_3;
+
+//7
+create view Sale_22co11_4 as
+    select * from Sale_22co11
+    where OID in(13,14)
+    with CHECK OPTION;
+
+------for violation-------
+ insert into Sale_22co11_4 values (15,'ord6',1200,'Jack');
+
+------for correct insertion------
+ insert into Sale_22co11_4 values (13,'ord6',1200,'Jack');
+
+//8
+ delete from sale_22co11_1 where oid=13;
+ select * from Sale_22co11_1;
+ select * from Sale_22co11;
+
+//9
+ create view Sale_22co11_5 as
+   select * from Sale_22co11
+   with READ ONLY;
+
+ update sale_22co11_5
+   set oname='Caleb'
+   where oid=14;
+
+//10
+ drop view sale_22co11_5;

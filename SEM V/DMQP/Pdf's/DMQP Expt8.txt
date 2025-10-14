@@ -1,0 +1,183 @@
+create table Emp_22co11_1(
+  
+ EID number(3) primary key,
+   
+ Name varchar(15),
+   
+ Salary int,
+    
+Hire_date date,
+    
+Job varchar(15),
+    
+did number(3),
+    
+mid number(3));
+
+ alter table Emp_22co11_1 modify name varchar(15);
+ alter table Emp_22co11_1 modify job varchar(15);
+
+insert into Emp_22co11_1 values(701, 'Deepak', 8000, '05-Jan-2001', 'Analyst', 30, 707);
+
+
+insert into Emp_22co11_1 values(702, 'Naresh', 9000, '10-Jan-2001', 'Manager', 10, 707);
+
+
+insert into Emp_22co11_1 values(703, 'Sumesh', 7000, '05-Feb-2001', 'Salesman', 20, 705);
+
+
+insert into Emp_22co11_1 values(704, 'Aditya', 9000, '27-Nov-2003', 'Analyst', 30, 707);
+
+
+insert into Emp_22co11_1 values(705, 'Lalit', 6500, '08-Oct-2002', 'Manager', 20, 707);
+
+
+insert into Emp_22co11_1 values(706, 'Amit', null, '04-Nov-2004', 'Clerk', 10, 702);
+
+
+insert into Emp_22co11_1 values(707, 'Vishal', 9500, '01-Jan-2001', 'Manager', 30, null);
+
+
+insert into Emp_22co11_1 values(708, 'Sumit', 8000, '06-Jan-2006', 'Accountant', 10, 702);
+
+//1
+select Name, Salary
+
+from Emp_22co11_1
+
+where Salary>any(
+
+select  Salary
+
+from Emp_22co11_1
+
+where Job="Analyst");
+
+//2
+select Name, Salary
+
+from Emp_22co11_1
+
+where Salary>all(
+
+select  Salary
+
+from Emp_22co11_1
+
+where Job='Analyst');
+
+//3
+select Name, Salary
+
+from Emp_22co11_1 
+
+where Salary=(
+
+select max(Salary)
+
+from Emp_22co11_1);
+
+
+//4
+select count(*)
+
+from Dept_22co11_1 
+
+where Did=(
+
+select Did
+
+from Dept_22co11_1
+ 
+where Dname='Sales');
+
+//5
+delete from Emp_22co11_1 
+
+where Did in(
+
+select Did
+ from Dept_22co11_1 
+
+where Dname='Accountants');
+
+//6
+select Eid, Name
+
+from Emp_22co11_1 
+
+where Did=(
+
+select Did
+from Dept_22co11_1
+
+where Dname='Sales');
+
+
+//7
+select Name
+
+from Emp_22co11_1 
+
+where Did=(
+
+select Did
+from Emp_22co11_1
+
+where Name='Suresh');
+
+//8
+select * from emp_22co11_1
+
+a WHERE salary >
+  
+(select avg(salary) from emp_22co11_1 b
+  
+where a.did=b.did);
+
+//9
+ select max(salary) from emp_22co11_1
+  
+ where salary !=
+  
+ (select max(salary) from emp_22co11_1);
+
+//10
+set linesize 160;
+select * from emp_22co11_1
+ 
+where salary IN
+  
+(select max(salary) from emp_22co11_1
+  
+group by job)
+  
+order by salary desc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

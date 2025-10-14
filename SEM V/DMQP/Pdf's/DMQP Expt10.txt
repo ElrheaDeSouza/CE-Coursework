@@ -1,0 +1,99 @@
+CREATE TABLE Emp_22co11(
+eid number(3) primary key,
+ename varchar(20),
+salary number(5),
+hire_date date,
+job varchar(12),
+DID number(3),mid number(3));
+
+insert into Emp_22co11 values(707,'Vishal',9500,'05-jan-2001','Manager',30,null);
+insert into Emp_22co11 values(705,'Lalit',6500,'10-jan-2001','Manager',20,707);
+insert into Emp_22co11 values(701,'Deepak',8000,'05-feb-2001','Analyst',30,707);
+insert into Emp_22co11 values(702,'Naresh',9000,'27-nov-2003','Manager',10,707);
+insert into Emp_22co11 values(703,'Sumesh',7000,'08-oct-2002','Salesman',20,705);
+insert into Emp_22co11 values(704,'Aditya',9000,'04-nov-2004','Analyst',30,707);
+insert into Emp_22co11 values(706,'Amit',null,'01-jan-2001','Clerk',10,702);
+insert into Emp_22co11 values(708,'Sumit',8000,'06-jan-2006','Accountant',10,702);
+
+select * from Emp_22co11;
+
+1) Create a trigger for the employee table that would fire for INSERT or UPDATE operations
+performed on the employee table. This trigger will display the salary difference between the
+old values and new values.
+
+//1
+create or replace trigger t1
+   after update or insert
+   on emp_22co11
+   for each row declare
+   dsal number;
+   begin
+          dsal := :new.salary - :old.salary;
+          dbms_output.put_line('Old Sal : ' || :old.salary);
+          dbms_output.put_line('New Sal : ' || :new.salary);
+          dbms_output.put_line('Sal Diff: ' || dsal);
+   end;
+   /
+ SET SERVEROUTPUT ON;(To make it calculate the salary diff and dispaly the calculated output on the terminal)
+ INSERT INTO Emp_22co11 VALUES (709, 'Patrick', 8500, '10-sep-2024', 'Analyst', 20, 707);
+ UPDATE Emp_22co11 SET salary = 8200 WHERE eid = 701;
+ delete from Emp_22co11 where ename='Patrick';(if you wanna delete)
+
+2) Convert employee name into uppercase whenever an employee record is inserted or
+updated. Trigger to be fired before the insert or update.
+
+//2
+ create or replace trigger t1
+    before insert or update
+    on Emp_22co11
+    for each row
+    begin
+         :new.ename := UPPER(:new.ename);
+    end;
+    /
+
+ update Emp_22co11
+    set ename='Pedro'
+    where eid=705;
+
+select * from Emp_22co11;
+
+
+3) Trigger before deleting a record from emp table. Trigger will insert the row to be deleted
+into another table.
+
+CREATE OR REPLACE TRIGGER t1
+    BEFORE DELETE
+    ON emp_22co11
+    FOR EACH ROW
+BEGIN
+    INSERT INTO Emp_backup (eid, ename, salary, hire_date, job, did, mid)
+    VALUES (:OLD.eid, :OLD.ename, :OLD.salary, :OLD.hire_date, :OLD.job, :OLD.did, :OLD.mid);
+END;
+/
+
+set serveroutput on;
+   DELETE from emp_22co11
+   where eid=709;
+
+ select * from Emp_backup;
+4) Program to indicate invalid salary (if salary is more than 9000) condition using Trigger
+ create or replace trigger t1
+    before insert or update
+    on emp_22co11
+    for each row
+    begin
+         if(:new.salary > 9000)
+         then
+             raise_application_error(-20001, 'Invalid salary: Salary cannot exceed 9000.');
+         end if;
+   end;
+   /
+
+ update emp_22co11
+    set salary=9090
+    where eid=701;
+
+ update emp_22co11
+    set salary=8000
+    where eid=701;
